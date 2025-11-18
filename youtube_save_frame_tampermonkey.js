@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Save Frame — JPG 98% (hotkey only)
 // @namespace    steven.saveframe
-// @description  Save the current YouTube frame as a JPEG at 95% quality via hotkey (no UI/button)
+// @description  Save the current YouTube frame as a JPEG at 98% quality via hotkey (no UI/button)
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @grant        GM_download
