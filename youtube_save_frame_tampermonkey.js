@@ -17,12 +17,10 @@
   const CFG = {
     format: 'jpeg',     // output format: 'jpeg'
     quality: 0.98,      // <-- 98% JPEG quality
-    scale: 1,           // 1 = native; 1.5–2.0 only if you intend to downscale externally
     hotkey: 's',        // press Alt+S by default
     hotkeyCtrl: false,
     hotkeyShift: false,
     hotkeyAlt: true,
-    autoPause: false,   // pause before capture
     showToast: true     // show a brief "Saved" toast
   };
 
@@ -153,8 +151,6 @@
     if (!video) throw new Error('Video element not found');
     const player = getPlayerFor(video);
 
-    if (CFG.autoPause && !video.paused) video.pause();
-
     if (!video.videoWidth || !video.videoHeight || video.readyState < 2) {
       throw new Error('Video not ready. Play briefly, then pause at your frame.');
     }
@@ -162,8 +158,8 @@
     // Align with the currently presented frame
     await waitNextPresentedFrame(video);
 
-    const targetW = Math.max(1, Math.round(video.videoWidth * CFG.scale));
-    const targetH = Math.max(1, Math.round(video.videoHeight * CFG.scale));
+    const targetW = Math.max(1, Math.round(video.videoWidth));
+    const targetH = Math.max(1, Math.round(video.videoHeight));
 
     const canvas = document.createElement('canvas');
     canvas.width = targetW;
