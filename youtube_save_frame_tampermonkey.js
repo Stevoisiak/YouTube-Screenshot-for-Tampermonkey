@@ -18,10 +18,10 @@
     format: 'jpeg',     // output format: 'jpeg'
     quality: 0.98,      // <-- 98% JPEG quality
     scale: 1,           // 1 = native; 1.5–2.0 only if you intend to downscale externally
-    hotkey: 's',        // press Ctrl+Shift+S by default
-    hotkeyCtrl: true,
-    hotkeyShift: true,
-    hotkeyAlt: false,
+    hotkey: 's',        // press Alt+S by default
+    hotkeyCtrl: false,
+    hotkeyShift: false,
+    hotkeyAlt: true,
     autoPause: false,   // pause before capture
     showToast: true     // show a brief "Saved" toast
   };
