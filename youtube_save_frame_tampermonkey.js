@@ -2,7 +2,7 @@
 // @name         YouTube Save Frame — JPG 98% (hotkey only)
 // @namespace    steven.saveframe
 // @version      1.4.4
-// @description  Save the current YouTube frame as a JPEG at 95% quality via hotkey (no UI/button)
+// @description  Save the current YouTube frame as a JPEG at 98% quality via hotkey (no UI/button)
 // @match        https://www.youtube.com/*
 // @match        https://m.youtube.com/*
 // @grant        GM_download
@@ -16,7 +16,7 @@
   // ======= CONFIG =======
   const CFG = {
     format: 'jpeg',     // output format: 'jpeg'
-    _quality: 0.98,     // <-- 98% JPEG quality
+    quality: 0.98,      // <-- 98% JPEG quality
     scale: 1,           // 1 = native; 1.5–2.0 only if you intend to downscale externally
     hotkey: 's',        // press Ctrl+Shift+S by default
     hotkeyCtrl: true,
@@ -179,7 +179,7 @@
       throw new Error('This video is protected or cross-origin; capture is blocked by the browser.');
     }
 
-    const blob = await canvasToJpegBlob(canvas, CFG._quality);
+    const blob = await canvasToJpegBlob(canvas, CFG.quality);
 
     // Title for filename
     let titleText = '';
